@@ -107,6 +107,8 @@
                 "b66ad1c8-6151-45ff-a34b-2d9fd2f52d8b",
                 "e4fe71f9-9198-4dd7-b6a7-23b3d2590d7b",
                 "9cc4bb6e-b1fa-40ef-96c3-c2f9e293208b",
+                "56676e24-9b58-497f-b48f-9dfc81290224",
+                "6b4928fa-fcaf-4b81-b96b-9c874b96a477",
                 "ef62dfb7-4300-4558-bddc-5d88d42b7976"
               ],
               "containedElements": [
@@ -114,13 +116,6 @@
                 "47f5695e-5fad-46a1-8f2c-bc65491e3036",
                 "cfec0e14-be94-4038-91d6-8497ce76ef99"
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -153,6 +148,15 @@
               "containedElements": [
                 "5b1ab572-db25-46a4-8991-9d02f6aa7af3"
               ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -169,8 +173,8 @@
                 "text": "Autenticación Web/Mobile"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -267,12 +271,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "cd01f956-31c5-4dbf-ab87-9ad5b3f824f3",
+                  "title": "Robo de credenciales",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Obtención de credenciales válidas de usuarios legítimos.",
+                  "mitigation": "MFA, contraseñas robustas y detección de accesos anómalos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": "16"
+                },
+                {
+                  "id": "62e69579-ec7e-4d2e-94ef-f778926cfdc6",
+                  "title": "Intercepción de credenciales",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Captura de credenciales durante el proceso de autenticación.",
+                  "mitigation": "HTTPS obligatorio y gestión segura de certificados.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -640,8 +679,8 @@
                 "text": "Helpdesk"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -738,9 +777,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "5aa3364a-d065-4e87-8828-1357d794d86e",
+                  "title": "Robo de credenciales ",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Spoofing",
+                  "description": "Obtención de credenciales válidas.",
+                  "mitigation": "MFA, contraseñas reobustas y detección de accesos sospechosos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "20"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -757,8 +814,8 @@
                 "text": "Gestión de acceso"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -855,12 +912,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "c13a3f44-b37a-4495-9a36-d5f7de76476d",
+                  "title": "manipulación de suscripciones",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Repudiation",
+                  "description": "Modificación no autorizada de planes, pagos o datos de suscripción.",
+                  "mitigation": "Validación de entradas y control de integridad en APIs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "20"
+                },
+                {
+                  "id": "e2a13d1f-23d0-4dc8-9b4c-361dcf852194",
+                  "title": "Manipulación de perfiles de usuario",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Modificación no autorizada de datos y permisos de usuarios.",
+                  "mitigation": "Control de accesos y validación de peticiones.\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -877,8 +969,8 @@
                 "text": "Servicio Streaming"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -975,12 +1067,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "ea0dbc72-795e-4747-a75e-2704a19e26a4",
+                  "title": "Manipulación de contenido multimedia",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Alteración de vídeos o metadatos servidos a usuarios.",
+                  "mitigation": "Validación de integridad y control de accesos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -997,11 +1111,13 @@
                 "text": "S3 Bucket"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1098,13 +1214,46 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "fc44b130-0458-49dd-bf57-3fc789452ebc",
+                  "title": "Alteración de contenido",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Modificación de vídeos o metadatos almacenados.",
+                  "mitigation": "Control de accesos, versionado y auditoría.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "12"
+                },
+                {
+                  "id": "aff33e89-7170-4252-9654-25033920270b",
+                  "title": "Exposición de videos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Acceso no autorizado a contenido multimedia almacenado.",
+                  "mitigation": "URLs firmadas y control de acceso estricto.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "12"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1121,11 +1270,13 @@
                 "text": "Redis Caché "
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1222,13 +1373,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "52354fb2-a0f0-4e90-96ed-991391df0d58",
+                  "title": "Manipulación de caché ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Alteración de datos en caché para afectar al servicio.",
+                  "mitigation": "Control de acceso y aislamiento de Redis.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "12"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1645,51 +1816,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Conexión VPN\n",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Conexión VPN\n"
-            ],
-            "id": "ec72503c-1890-4e9e-8272-4ceadf03e6a8",
-            "source": {
-              "cell": "f50c4651-53c3-4dcd-8a92-ebe84fa7ff58"
-            },
-            "target": {
-              "cell": "84149126-d264-4e0a-aeea-7c327918c2bc",
-              "port": "1570131e-470b-4a29-9950-5f725abf34c5"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Conexión VPN",
               "description": "",
               "outOfScope": false,
@@ -1738,7 +1864,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Autenticación",
+              "name": "Autenticación VPN",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1752,7 +1878,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Autenticación"
+              "Autenticación VPN"
             ],
             "id": "3e8697ad-e1ad-4ca1-a1ee-1d869fdb334c",
             "source": {
@@ -1830,7 +1956,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Admin Infraestructura\n",
+              "name": "Conexión VPN\n",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1844,205 +1970,239 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Admin Infraestructura\n"
+              "Conexión VPN\n"
             ],
-            "id": "e6ea4525-8684-454b-96d6-c4fc29e278d4",
+            "id": "ec72503c-1890-4e9e-8272-4ceadf03e6a8",
             "source": {
-              "x": 840,
-              "y": 220
+              "cell": "f50c4651-53c3-4dcd-8a92-ebe84fa7ff58"
             },
             "target": {
-              "x": 942,
-              "y": 295
+              "cell": "84149126-d264-4e0a-aeea-7c327918c2bc",
+              "port": "1570131e-470b-4a29-9950-5f725abf34c5"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
             },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin Caché",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "f88b7be0-e7d4-4fd3-b80e-2ef3dbae5218"
+              ]
+            },
+            "labels": [
+              "Admin Caché"
+            ],
+            "id": "56676e24-9b58-497f-b48f-9dfc81290224",
+            "source": {
+              "x": 980,
+              "y": 320
+            },
+            "target": {
+              "cell": "47f5695e-5fad-46a1-8f2c-bc65491e3036",
+              "port": "7863ed9f-818b-439d-8a63-1f396052c998"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Despliegue de app",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Despliegue de app"
+            ],
+            "id": "9dfcdf1c-71d1-4e09-9236-5a4aa6375de3",
+            "source": {
+              "x": 970,
+              "y": 110
+            },
+            "target": {
+              "x": 580,
+              "y": 100
             },
             "vertices": [
               {
-                "x": 910,
-                "y": 295
+                "x": 770,
+                "y": 10
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gestión almacenamiento",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "f88b7be0-e7d4-4fd3-b80e-2ef3dbae5218"
+              ]
+            },
+            "labels": [
+              "Gestión almacenamiento"
+            ],
+            "id": "6b4928fa-fcaf-4b81-b96b-9c874b96a477",
+            "source": {
+              "x": 982,
+              "y": 280
+            },
+            "target": {
+              "cell": "3d42d5cd-6ef1-4f0d-b674-d3127eec1c88",
+              "port": "7863ed9f-818b-439d-8a63-1f396052c998"
+            },
+            "vertices": [
+              {
+                "x": 860,
+                "y": 150
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Automatización/config",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Automatización/config"
+            ],
+            "id": "791863e9-b74a-4179-baff-259ce06fc99d",
+            "source": {
+              "x": 1062,
+              "y": 160
+            },
+            "target": {
+              "cell": "84149126-d264-4e0a-aeea-7c327918c2bc",
+              "port": "45664882-a459-4d5a-8d26-88582a0dff6b"
+            },
+            "vertices": [
+              {
+                "x": 1090,
+                "y": 210
               }
             ]
           },
           {
             "position": {
-              "x": 902,
-              "y": 195.00000000000057
+              "x": 885.9999999999977,
+              "y": 255.00000000000057
             },
             "size": {
-              "width": 260,
-              "height": 160
+              "width": 310,
+              "height": 150
             },
             "attrs": {
               "text": {
                 "text": "Admin Infraestructura"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2139,12 +2299,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "9c02cdb9-f791-4ddf-9bbc-25ab509d8f05",
+                  "title": "Cambio no autorizado de configuración",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Modificación no autorizada de configuraciones críticas del sistema.",
+                  "mitigation": "Control de accesos, auditoría y aprobación de cambios.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -2161,8 +2343,8 @@
                 "text": "CI/CD"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2259,12 +2441,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "24086d92-74e2-492f-9943-3868d1f6ab2c",
+                  "title": "Manipulación de pipeline",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Modificación del pipeline para desplegar código malicioso.",
+                  "mitigation": "Revisión de cambios, control de acceso y firma de artefactos.\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "15"
+                },
+                {
+                  "id": "5a66b076-dfc8-4d8a-a928-ec3e06fc6be8",
+                  "title": "Exposición de secretos",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Information disclosure",
+                  "description": "Filtración de tokens, claves o credenciales almacenadas en CI/CD.",
+                  "mitigation": "Gestor de secretos, rotación de claves y acceso restringido.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "20"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -2281,11 +2498,13 @@
                 "text": "PostgreSQL"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2382,13 +2601,59 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "f09cc5d7-4a64-4d02-91e6-b0b1a711953d",
+                  "title": "Caida de Postgre",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "La base de datos deja de responder a las solicitudes.",
+                  "mitigation": "Replicación, monitorización y alta disponibilidad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "15"
+                },
+                {
+                  "id": "dbab33ad-2993-49a9-9ef2-b93694b02c6b",
+                  "title": "Saturación de microservicios",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Exceso de peticiones que degrada los servicios.",
+                  "mitigation": "Balanceo de carga y escalado automático.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "12"
+                },
+                {
+                  "id": "1821c22a-0aa7-4f0b-88e4-2a4dad825a12",
+                  "title": "Ransomware en Backup Server",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Denial of service",
+                  "description": "Un malware cifra copias de seguridad y sistemas críticos.",
+                  "mitigation": "Backups inmutables, EDR y segmentación de red.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": "20"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 3
+              }
             }
           },
           {
@@ -2432,18 +2697,24 @@
             "id": "ef62dfb7-4300-4558-bddc-5d88d42b7976",
             "source": {
               "x": 980,
-              "y": 330
+              "y": 360
             },
             "target": {
               "cell": "cfec0e14-be94-4038-91d6-8497ce76ef99",
               "port": "7863ed9f-818b-439d-8a63-1f396052c998"
-            }
+            },
+            "vertices": [
+              {
+                "x": 890,
+                "y": 360
+              }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "BeatrizLarMir",
-    "threatTop": 1
+    "threatTop": 17
   }
 }
